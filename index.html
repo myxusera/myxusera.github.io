@@ -2,19 +2,146 @@
 <head>
 	<title>Hello World</title>
 	<style>
-		body {
-			background-color: #2D2D2D;
-		}
+
+	* {
+    	box-sizing: border-box;
+	}
+
+	.resume {
+		font-family: Helvetica;
+		display: grid;
+		width: 800px;
+		height: 1000px;
+  		grid-template-columns: 30% auto;
+		grid-template-rows   : 20% 20% 40% 20%;
+  		grid-template-areas:
+    		"photo name"
+    		"side about"
+    		"side experience"
+    		"side school";
+	}
+
+	.photo {
+		grid-area: photo;
+		background-color: rgb(46, 55, 83);
+		padding: 20px 20px;
+		color:white;
+	}
+
+	.name {
+		grid-area: name;
+		background-color: rgb(46, 55, 83);
+		padding: 70px 20px 20px 20px;
+		color:white;
+	}
+
+	.side {
+		grid-area: side;
+		background-color: rgb(46, 55, 83);
+		padding: 20px 20px;
+		color:white;
+		text-align: center;
+	}
+
+	.about{
+		grid-area: about;
+		background-color: white;
+		padding: 20px 20px;
+	}
+
+	.experience {
+		grid-area: experience;
+		background-color: white;
+		padding: 20px 20px;
+	}
+
+	.school {
+		grid-area: school;
+		background-color: white;
+		padding: 20px 20px;
+	}
+
+	h1 {		
+		font-size: 42px;
+		margin: 0 0;
+	}
+
+	h2 {		
+		font-size: 24px;
+		margin: 5px 0 0 0;
+	}	
+
+	h3 {
+		font-size: 22px;
+		margin: 0 0;
+	}
+
+	p {
+		margin: 10px 0 0 0;
+	}
+
+	ul {
 		
-		h1 {
-			color: #C26356;
-			font-size: 30px;
-			font-family: Menlo, Monaco, fixed-width;
-		}
+	}
 
 	</style>
 </head>
 <body>
-	<h1>Hello World</h1>
+	<article class="resume">
+		<section class="grid-area photo">IMG</section>
+		<section class="grid-area name">
+			<h1>OLIVIA WILSON</h1>
+			<h2>IT Project Manager</h2>
+		</section>
+		<section class="grid-area side">
+			<p>
+				<b>Adress</b><br><br>
+				Cracow, Poland<br><br>
+				<b>Email</b><br><br>
+				email@gmail.com<br><br>
+				<b>Linkedin</b><br><br>
+				linkedin.com/profile<br><br>
+				<b>Github</b><br><br>
+				github.com/profile
+			</p>
+		</section>
+		<section class="grid-area about">
+			<h3>About me</h3>
+			<p>
+			I am a second-year student looking for an internship to gain my first experience in the IT industry. 
+			I am willing to develop my interests in the fields of data analysis and artificial intelligence. In my 
+			opinion socializing, building relationships and getting into teams quickly are essential to become 
+			a good teammate. Currently, in my spare time, I am expanding my knowledge in the fields of 
+			statistics, databases and programming.
+			</p>
+		</section>
+		<section class="grid-area experience">
+			<h3>Work experience</h3>
+			<p>
+				<b>Project Manager</b><br>
+				SpaceX | Oct 2017 - present
+				<ul>
+					<li>Conduct day-to-day project coordination, planning, and implementation across multiple teams</li>
+					<li>Create functional and technical application documents</li>
+				</ul>
+				<br>
+				<b>Project Manager</b><br>
+				Tesla | Oct 2014 - Oct 2017
+				<ul>
+					<li>Conduct day-to-day project coordination, planning, and implementation across multiple teams</li>
+					<li>Create functional and technical application documents</li>
+					<li>Translated requirements into polished, high-level designs</li>
+				</ul>
+			</p>
+		</section>
+		<section class="grid-area school">
+			<p>
+			<b>AGH University of Science and Technology </b><br>
+			IT and Econometrics <br>
+			10/2019 – present <br>
+			Expected graduation: July 2022
+			</p>
+		</section>
+	</article>
 </body>
 </html>
