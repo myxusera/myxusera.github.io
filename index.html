@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <head>
-	<title>Hello World</title>
+	<title>Resume</title>
+	<meta charset="UTF-8">
 	<style>
 
 	* {
     	box-sizing: border-box;
 	}
 
-	.resume {
+	.resume {	
 		font-family: Helvetica;
 		display: grid;
 		width: 800px;
-		height: 1000px;
+		height: 1200px;
   		grid-template-columns: 30% auto;
 		grid-template-rows   : 20% 20% 40% 20%;
   		grid-template-areas:
@@ -19,12 +20,16 @@
     		"side about"
     		"side experience"
     		"side school";
+		border: solid black 1px;
+
+		width: 800px;
+    	height: auto;
 	}
 
 	.photo {
 		grid-area: photo;
 		background-color: rgb(46, 55, 83);
-		padding: 20px 20px;
+		padding: 0px 0px;
 		color:white;
 	}
 
@@ -53,6 +58,7 @@
 		grid-area: experience;
 		background-color: white;
 		padding: 20px 20px;
+		font-size: 18px;
 	}
 
 	.school {
@@ -62,7 +68,7 @@
 	}
 
 	h1 {		
-		font-size: 42px;
+		font-size: 48px;
 		margin: 0 0;
 	}
 
@@ -72,23 +78,42 @@
 	}	
 
 	h3 {
-		font-size: 22px;
+		font-size: 28px;
 		margin: 0 0;
 	}
 
-	p {
+	p, b {
 		margin: 10px 0 0 0;
+		font-size: 18px;
 	}
 
-	ul {
-		
+	ul, li {
+		font-size: 18px;
+	}
+
+	img {
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+    	width:240px; /* you can use % */
+    	height: auto;				
+	}
+
+	.flex-container {
+		display: flex;
+		background-color: rgb(255, 255, 255);
+	}
+
+	.flex-container > div {
+		margin-left: 40px;
 	}
 
 	</style>
 </head>
 <body>
 	<article class="resume">
-		<section class="grid-area photo">IMG</section>
+		<section class="grid-area photo">
+			<img src="cv2.jpg" alt="Portrait">
+		</section>
 		<section class="grid-area name">
 			<h1>OLIVIA WILSON</h1>
 			<h2>IT Project Manager</h2>
@@ -118,12 +143,20 @@
 		<section class="grid-area experience">
 			<h3>Work experience</h3>
 			<p>
-				<b>Project Manager</b><br>
-				SpaceX | Oct 2017 - present
-				<ul>
-					<li>Conduct day-to-day project coordination, planning, and implementation across multiple teams</li>
-					<li>Create functional and technical application documents</li>
-				</ul>
+				<div class="flex-container">
+					<div>
+						SpaceX
+					</div>
+					<div>
+						<b>Project Manager</b><br>
+						SpaceX | Oct 2017 - present
+						<ul>
+							<li>Conduct day-to-day project coordination, planning, and implementation across multiple teams</li>
+							<li>Create functional and technical application documents</li>
+						</ul>
+					</div>
+				  </div>
+				
 				<br>
 				<b>Project Manager</b><br>
 				Tesla | Oct 2014 - Oct 2017
