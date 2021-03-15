@@ -20,7 +20,7 @@ body {
     height: auto;
     display: grid;
     grid-template-columns: 30% auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 20% auto auto auto;
     grid-template-areas:
     		"photo name"
     		"side about"
@@ -56,6 +56,8 @@ body {
     grid-area: photo;
     background-color: rgb(46, 55, 83);
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
 /*  */
@@ -125,6 +127,7 @@ body {
 
 .side .side-title {
     display: block;
+    font-weight: bold;
 }
 
 .side .side-text {
@@ -146,24 +149,15 @@ h2 {
     margin: 5px 0 0 0;
 }
 
-h3 {
-    font-size: 28px;
-    margin: 0 0;
-}
-
 p, b {
     margin: 10px 0 0 0;
     font-size: 18px;
 }
 
-ul, li {
-    font-size: 18px;
-}
-
 img {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    width: 240px; /* you can use % */
+    margin: 0;
+    padding: 0;
+    width: 240px; 
     height: auto;
 }
 
