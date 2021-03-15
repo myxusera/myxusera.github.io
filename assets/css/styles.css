@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: Helvetica, serif;
+}
+
+/*  */
+
+.resume {
+    max-width: 800px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    		"photo name"
+    		"side about"
+    		"side experience"
+    		"side school";
+    border: solid black 1px;
+}
+
+/*  */
+
+.section-text {
+    margin: 10px 0 25px 0;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.section-ul {
+    margin: 0 0 0 40px;
+    padding: 0;
+}
+
+
+.section-ul-li {
+    margin: 0 0 8px 0;
+}
+
+.section-ul-li:last-child { margin: 0;}
+
+/*  */
+
+.photo {
+    grid-area: photo;
+    background-color: rgb(46, 55, 83);
+    color: white;
+}
+
+/*  */
+
+.name {
+    grid-area: name;
+    background-color: rgb(46, 55, 83);
+    padding: 70px 20px 20px 20px;
+    color: white;
+}
+
+/*  */
+
+.side {
+    grid-area: side;
+    background-color: rgb(46, 55, 83);
+    padding: 20px 20px;
+    color: white;
+    text-align: center;
+}
+
+/*  */
+
+.about {
+    grid-area: about;
+    background-color: white;
+    padding: 20px 20px;
+}
+
+.about-title {
+    display: block;
+    font-weight: bold;
+}
+
+.about-desc {
+    margin: 5px 0 20px 0;
+    display: block;
+}
+
+/*  */
+
+.experience {
+    grid-area: experience;
+    background-color: white;
+    padding: 20px 20px;
+    font-size: 18px;
+}
+
+/*  */
+
+.school {
+    grid-area: school;
+    background-color: white;
+    padding: 20px 20px;
+    font-size: 18px;
+}
+
+/*  */
+
+.side {
+    height: 100%;
+    display: flex;
+    align-content: flex-start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.side .side-title {
+    display: block;
+}
+
+.side .side-text {
+    margin: 0 0 30px 0;
+    display: block;
+}
+
+.side .side-text:last-child { margin: 0; }
+
+/*  */
+
+h1 {
+    font-size: 48px;
+    margin: 0 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 5px 0 0 0;
+}
+
+h3 {
+    font-size: 28px;
+    margin: 0 0;
+}
+
+p, b {
+    margin: 10px 0 0 0;
+    font-size: 18px;
+}
+
+ul, li {
+    font-size: 18px;
+}
+
+img {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    width: 240px; /* you can use % */
+    height: auto;
+}
+
+
+
+
+
