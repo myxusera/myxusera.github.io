@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial,sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30px;
+    margin-top: 14px;
+}
+
+nav a {
+    font-size: 13px;
+    display: inline-block;
+    line-height: 24px;
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+    padding: 5px 6.7px;
+    text-decoration: none;
+    color: black;
+}
+
+nav img {
+    width: 36px;
+    padding: 12px;
+    margin: auto 7px;
+    cursor: pointer;
+}
+
+nav button {
+	border: 1px solid #4285f4;
+	font-weight: bold;
+	outline: none;
+	background: #4285f4;
+	color: #fff;
+	padding: 7px 12px;
+	border-radius: 3px;
+	margin-left: 7px;
+	cursor: pointer;
+    width: 118px;
+    height: 36px;
+}
+
+.main {
+    flex: 1;
+}
+
+.main .logo {
+    display: block;
+	margin: 0px auto;
+	margin-top: 200px;
+}
+
+.search-bar {
+    width: 580px;
+	margin: 0px auto;
+	position: relative;
+	padding: 20px;
+	text-align: center;
+}
+
+.search-bar .s-input {
+    display: block;
+	border: 1px solid #ddd;
+	color: rgba(0,0,0, 0.87);
+	font-size: 16px;
+	padding: 13px;
+	padding-left: 45px;
+	border-radius: 25px;
+	width: 100%;
+	transition: box-shadow 100ms;
+	outline: none;
+}
+
+.search-bar .s-button{
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+footer {
+	background: #f2f2f2;
+}
+
+footer h4 {
+    padding: 15px 30px;
+    border-bottom: 1px solid #dadce0;
+    font-size: 15px;
+    color: rgba(0,0,0,.54);
+}
+
+footer a {
+	color: #5f6368;
+	padding: 12px 11.3px;
+	font-size: 14px;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+.links-left,
+.links-coal,
+.links-right {
+  padding: 15px;
+  flex: 1; 
+} 
+
+@media (max-width: 768px) {
+  .links {
+  	align-items: center;
+  	justify-content: center;
+    flex-direction: column;
+  }
+ .links-left {
+ 	order: 1;
+ }
+}
+
+.links-left {
+
+}
+
+.links-coal {
+  text-align: center;
+}
+
+.links-right {
+  text-align: right;
+}
+
+
+
+
+
