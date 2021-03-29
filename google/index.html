@@ -1,48 +1,165 @@
 <!DOCTYPE html>
 <head>
 	<title>Google</title>
+
 	<meta charset="UTF-8">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link
-		rel="stylesheet"
-		href="assets/css/styles.css"
-	>
+
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/style2.css">
 </head>
-<body>
-	<nav>
-		<a href="#">Gmail</a>
-		<a href="#">Grafika</a>
-		<img src="assets/img/bars.png">
-		<button>Zaloguj się</button>
-	</nav>
-	<section class="main">
-		<img src="assets/img/google.png" class="logo">
-		<form>
-			<div class="search-bar">
-				<input type="text" class="s-input">
-				<input type="submit" class="s-button" value="Szukaj w Google">
-      			<input type="submit" class="s-button" value="Szczęśliwy traf">
+
+<body class="results">
+	<div class="search-results">
+		<header class="search-results-header">
+			<div class="container2">
+				<div class="search-results-header-block">
+					<img class="search-results-header-block-logo" src="assets/img/google.png">
+					<input type="text" class="search-results-header-block-input">
+				</div>
+				<div class="search-results-header-block-login">
+					<nav class="search-results-header-block-login-nav">
+						<img src="assets/img/bars.png">
+						<button>Zaloguj się</button>
+					</nav>
+				</div>			
 			</div>
-		</form>
-	</section>
-	<footer>
-		<h4>Polska</h4>
-		<div class="links">
-			<div class="links-left">
-				<a href="#">O nas</a>
-				<a href="#">Reklamuj się</a>
-				<a href="#">Dla firm</a>
-				<a href="#">Jak działa wyszukiwarka</a>
+			<div class="container">
+				<nav class="search-results-header-nav">
+					<ul>
+						<li>
+							<a href="#">Wszystko</a>
+						</li>	
+						<li>
+							<a href="#">Wiadomości</a>
+						</li>	
+						<li>
+							<a href="#">Grafika</a>
+						</li>	
+						<li>
+							<a href="#">Wideo</a>
+						</li>	
+						<li>
+							<a href="#">Mapy</a>
+						</li>	
+						<li>
+							<a href="#">Więcej</a>
+						</li>	
+						<li>
+							<a href="#">Ustawienia</a>
+						</li>	
+						<li>
+							<a href="#">Narzędzia</a>
+						</li>	
+					</ul>
+				</nav>
 			</div>
-			<div class="links-coal">
-				<a href="#">Neutralność węglowa od 2007 roku</a>
-			</div>
-			<div class="links-right">
-				<a href="#">Prywatność</a>
-				<a href="#">Warunki</a>
-				<a href="#">Ustawienia</a>
-			</div>
+		</header>
+		<div class="container">
+			<span class="search-results-text">Około 420 000 wyników (4,20 s)</span>
+
+			<article class="search-results-main">
+				<div class="search-results-main-item">
+					<p>www.losowastrona.pl > losowa > strona</p>
+					<a href="#">Losowy tytuł strony</a>
+					<span>Lorem ipsum dolor sit amet ligula. Aliquam erat eget sapien. Praesent pretium. Vivamus consectetuer condimentum enim quis ante.
+					</span>
+				</div>
+			</article>
+			<article class="search-results-main">
+				<div class="search-results-main-item">
+					<p>www.losowastrona.pl > losowa > strona</p>
+					<a href="#">Losowy tytuł strony</a>
+					<span>Lorem ipsum dolor sit amet ligula. Aliquam erat eget sapien. Praesent pretium. Vivamus consectetuer condimentum enim quis ante.
+					</span>
+				</div>
+			</article>
+			<article class="search-results-main">
+				<div class="search-results-main-item">
+					<p>www.losowastrona.pl > losowa > strona</p>
+					<a href="#">Losowy tytuł strony</a>
+					<span>Lorem ipsum dolor sit amet ligula. Aliquam erat eget sapien. Praesent pretium. Vivamus consectetuer condimentum enim quis ante.
+					</span>
+				</div>
+			</article>
+			<article class="search-results-main">
+				<div class="search-results-main-item">
+					<p>www.losowastrona.pl > losowa > strona</p>
+					<a href="#">Losowy tytuł strony</a>
+					<span>Lorem ipsum dolor sit amet ligula. Aliquam erat eget sapien. Praesent pretium. Vivamus consectetuer condimentum enim quis ante.
+					</span>
+				</div>
+			</article>
+			<article class="search-results-main">
+				<div class="search-results-main-item">
+					<p>www.losowastrona.pl > losowa > strona</p>
+					<a href="#">Losowy tytuł strony</a>
+					<span>Lorem ipsum dolor sit amet ligula. Aliquam erat eget sapien. Praesent pretium. Vivamus consectetuer condimentum enim quis ante.
+					</span>
+				</div>
+			</article>
+			<article class="search-results-main">
+				<div class="search-results-main-item">
+					<p>www.losowastrona.pl > losowa > strona</p>
+					<a href="#">Losowy tytuł strony</a>
+					<span>Lorem ipsum dolor sit amet ligula. Aliquam erat eget sapien. Praesent pretium. Vivamus consectetuer condimentum enim quis ante.
+					</span>
+				</div>
+			</article>
 		</div>
-	</footer>
+		<footer>
+			<h4>Polska</h4>
+			<div class="links">
+				<div class="links-left">
+					<a href="#">Pomoc</a>
+					<a href="#">Prześlij opinię</a>
+					<a href="#">Prywatność</a>
+					<a href="#">Warunki</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+
+
+	<div class="search">
+		<nav class="nav">
+			<a href="#">Gmail</a>
+			<a href="#">Grafika</a>
+			<img src="assets/img/bars.png">
+			<button>Zaloguj się</button>
+		</nav>
+		<section class="main">
+			<img src="assets/img/google.png" class="logo">
+			<form>
+				<div class="search-bar">
+					<input type="text" class="s-input">
+					<input type="submit" class="s-button" value="Szukaj w Google">
+					<input type="submit" class="s-button" value="Szczęśliwy traf">
+				</div>
+			</form>
+		</section>
+		<footer>
+			<h4>Polska</h4>
+			<div class="links">
+				<div class="links-left">
+					<a href="#">O nas</a>
+					<a href="#">Reklamuj się</a>
+					<a href="#">Dla firm</a>
+					<a href="#">Jak działa wyszukiwarka</a>
+				</div>
+				<div class="links-coal">
+					<a href="#">Neutralność węglowa od 2007 roku</a>
+				</div>
+				<div class="links-right">
+					<a href="#">Prywatność</a>
+					<a href="#">Warunki</a>
+					<a href="#">Ustawienia</a>
+				</div>
+			</div>
+		</footer>
+	</div>
 </body>
+
 </html>
