@@ -13,11 +13,11 @@ body {
     overflow-x: hidden;
 }
 
-body:not(.results) .search-results {
+.body:not(.results) .search-results {
     display: none;
 }
 
-body:not(.results) .search {
+.body:not(.results) .search {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
