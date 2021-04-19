@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/style2.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+	<script src="cities.js"></script>
 </head>
 
 <body>
@@ -60,7 +61,14 @@
 			</header>
 			<div class="container">
 				<span class="search-results-text">Około 420 000 wyników (4,20 s)</span>
-
+				<section class="miasta">
+					<div class="lista">
+						<h2>Wyszukane miasta: </h2>
+						<li v-for="miasto in filtrowaniemiast">
+							{{miasto.name}}
+						</li>
+					</div>
+				</section>
 				<article class="search-results-main">
 					<div class="search-results-main-item">
 						<p>www.losowastrona.pl > losowa > strona</p>
@@ -166,6 +174,17 @@
 	  el: '#app',
 	  data: {
 		googleSearch: '',
+		miasta: window.cities
+	  },
+	  computed: {
+		  filtrowaniemiast: function(){
+			  let wynik = this.miasta.filter(miasto => miasto.name.includes(this.googleSearch));
+			  if (wynik.length>10)
+			  {
+				  return wynik.slice(1,11);
+			  }
+			  return wynik;
+		  }
 	  }
 	});
   </script>
