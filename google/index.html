@@ -17,26 +17,32 @@
     <header class="header">
         <nav class="nav">
             <div class="nav-search">
-                <img class="nav-search-logo" src="assets/img/google.png">
-                <div class="input-box" :class="{ focused: shouldShowCitiesList }">
+                <img class="nav-search-logo" src="assets/img/google.png" @click="reset">
+                <div
+                        class="input-box"
+                        :class="{ focused: shouldShowCitiesList }"
+                        @blur="toggleFocused(false)"
+                >
                     <span class="input-box-loup" @click="submit"></span>
                     <input
-                            v-model="googleSearch"
-                            class="nav-search-input"
-                            ref="second"
-                            type="text"
-                            @blur="toggleFocused(false)"
-                            @focus="toggleFocused(true)"
-                            @keypress.enter.prevent="submit"
+                        v-model="googleSearch"
+                        class="nav-search-input"
+                        ref="second"
+                        type="text"
+                        @focus="toggleFocused(true)"
+                        @keypress.enter="submit"
+                        @keyup.esc.prevent="toggleFocused(false)"
                     >
                     <span class="input-box-mic"></span>
-                    <ul class="search-bar-results" v-if="shouldShowCitiesList">
+                    <ul class="search-bar-results" v-show="shouldShowCitiesList">
                         <li
                                 :key="city.name"
                                 v-for="city in filterCities"
-                                v-html="boldName(city.name)"
                                 @click="select(city)"
-                        ></li>
+                        >
+                            <span class="input-box-mic"></span>
+                            <p v-html="boldName(city.name)"></p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -56,39 +62,43 @@
             </ul>
         </nav>
         <div class="main">
-            <img src="assets/img/google.png" class="logo">
-            <form>
-                <div class="search-bar">
-                    <div class="input-box-res" :class="{ focused: shouldShowCitiesList }">
-                        <span class="input-box-res-lupa"></span>
-                        <input
-                            v-model="googleSearch"
-                            ref="first"
-                            type="text"
-                            class="s-input"
-                            @blur="toggleFocused(false)"
-                            @focus="toggleFocused(true)"
-                            @keypress.enter="submit"
+            <img
+                    src="assets/img/google.png"
+                    class="logo"
+                    @click="reset"
+            >
+            <div class="search-bar">
+                <div
+                    class="input-box-res"
+                    :class="{ focused: shouldShowCitiesList }"
+                    @blur="toggleFocused(false)"
+                >
+                    <span class="input-box-res-lupa"></span>
+                    <input
+                        v-model="googleSearch"
+                        ref="first"
+                        type="text"
+                        class="s-input"
+                        @focus="toggleFocused(true)"
+                        @keypress.enter="submit"
+                        @keyup.esc.prevent="toggleFocused(false)"
+                    >
+                    <span class="input-box-res-test"></span>
+                    <ul v-show="shouldShowCitiesList" class="search-bar-results">
+
+                        <li
+                                :key="city.name"
+                                v-for="city in filterCities"
+                                @click="select(city)"
                         >
-                        <span class="input-box-res-mic"></span>
-                        <ul v-if="shouldShowCitiesList" class="search-bar-results">
-                            <li
-                                    :key="city.name"
-                                    v-for="city in filterCities"
-                                    @click="select(city)"
-                            >
-                                <span class="input-box-loup"></span>
-                                <p
-                                    v-html="boldName(city.name)"
-                                >
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <input type="submit" class="s-button" value="Szukaj w Google" @keyup.enter="submit">
-                    <input type="submit" class="s-button" value="Szczęśliwy traf">
+                            <span class="input-box-mic"></span>
+                            <p v-html="boldName(city.name)"></p>
+                        </li>
+                    </ul>
                 </div>
-            </form>
+                <input type="submit" class="s-button" value="Szukaj w Google" @keyup.enter="submit">
+                <input type="submit" class="s-button" value="Szczęśliwy traf">
+            </div>
         </div>
         <div class="container">
             <nav class="search-results-header-nav">
@@ -123,14 +133,7 @@
     </header>
     <div class="container">
         <span class="search-results-text">Około 420 000 wyników (4,20 s)</span>
-        <section class="miasta">
-            <div class="lista">
-                <h2>Wyszukane miasta: </h2>
-                <li v-for="miasto in filterCities">
-                    {{miasto.name}}
-                </li>
-            </div>
-        </section>
+        <!-- uzunieta sekcja miast-->
         <article class="search-results-main">
             <div class="search-results-main-item">
                 <p>www.losowastrona.pl > losowa > strona</p>
@@ -215,16 +218,7 @@
       googleSearch: '',
       cities: window.cities,
       showResults: false,
-      focused: false,
-    },
-    updated() {
-      this.$nextTick(() => {
-        if (this.googleSearch.length > 0) {
-          this.$refs.second.focus()
-        } else {
-          this.$refs.first.focus()
-        }
-      })
+      isFocused: false,
     },
     computed: {
       filterCities() {
@@ -237,7 +231,7 @@
         return results
       },
       shouldShowCitiesList() {
-        return this.focused && this.googleSearch.length !== 0
+        return this.isFocused && this.googleSearch.length !== 0
       },
     },
     methods: {
@@ -245,24 +239,33 @@
         return city.replaceAll(this.googleSearch, `<b>${this.googleSearch}</b>`)
       },
       submit() {
-        this.toggleFocused(true)
+        this.toggleFocused(false)
+
+        if (this.showResults) return
+
         this.toggleResults(true)
+        this.$refs.second.focus()
       },
       select(city) {
         this.googleSearch = city.name
+        this.submit()
       },
       toggleResults(value = undefined) {
         if (value === undefined) {
-          this.showResults = !this.showResults
+          return this.showResults = !this.showResults
         }
         this.showResults = value
       },
       toggleFocused(value = undefined) {
         if (value === undefined) {
-          this.focused = !this.focused
+          return this.isFocused = !this.isFocused
         }
-        this.focused = value
+        this.isFocused = value
       },
+      reset() {
+        this.googleSearch = ''
+        this.toggleResults(false)
+      }
     },
   })
 </script>
