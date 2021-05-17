@@ -106,6 +106,13 @@ body {
     border-bottom: 1px solid #DDDDDD;
 }
 
+.search-bar .active {
+    background: gray;
+}
+.search-bar .active:hover {
+    background: gray;
+}
+
 .search-bar .input-box-res .input-box-res-lupa {
     width: 40px;
     height: 38px;
