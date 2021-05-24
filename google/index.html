@@ -20,33 +20,8 @@
         <nav class="nav">
             <div class="nav-search">
                 <img class="nav-search-logo" src="assets/img/google.png" @click="reset">
-                <div
-                        class="input-box"
-                        :class="{ focused: shouldShowCitiesList }"
-                        @blur="toggleFocused(false)"
-                >
-                    <span class="input-box-loup" @click="submit"></span>
-                    <input
-                        v-model="googleSearch"
-                        class="nav-search-input"
-                        ref="second"
-                        type="text"
-                        @focus="toggleFocused(true)"
-                        @keypress.enter="submit"
-                        @keyup.esc.prevent="toggleFocused(false)"
-                    >
-                    <span class="input-box-mic"></span>
-                    <ul class="search-bar-results" v-show="shouldShowCitiesList">
-                        <li
-                                :key="city.name"
-                                v-for="city in filteredCities"
-                                @click="select(city)"
-                        >
-                            <span class="input-box-mic"></span>
-                            <p v-html="boldName(city.name)"></p>
-                        </li>
-                    </ul>
-                </div>
+                <v-autocompleter :options="cities" @enter="showResults" @keypress.enter="submit" ></v-autocompleter>
+
             </div>
             <ul class="nav-right">
                 <li>
@@ -69,7 +44,11 @@
                     class="logo"
                     @click="reset"
             >
-            <v-autocompleter :options="cities" @enter="showResults"></v-autocompleter>
+            <div class="search-bar">
+                    <v-autocompleter :options="cities" @enter="showResults" @keypress.enter="submit"></v-autocompleter>
+                    <input type="submit" class="s-button" value="Szukaj w Google" @keyup.enter="submit">
+                    <input type="submit" class="s-button" value="Szczęśliwy traf">
+            </div>       
         </div>
         <div class="container">
             <nav class="search-results-header-nav">
@@ -185,7 +164,28 @@
 <script>  
   var app = new Vue({
     el: '#app',
-    
-  })
+    data: {  
+        googleSearch: '',
+        cities: window.cities,
+        showResults: false,
+        isFocused: false,
+        activeResult: 0,
+        isInAutocompleter: false,
+        filteredCities: [],
+    },
+    methods: {
+        toggleFocused(value = undefined) {
+            if (value === undefined) {
+                return this.isFocused = !this.isFocused
+            }
+            this.isFocused = value
+        },
+        reset() {
+            this.googleSearch = ''
+            this.toggleResults(false)
+        }
+    },
+   
+});
 </script>
 </html>

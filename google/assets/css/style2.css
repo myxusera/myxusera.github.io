@@ -63,25 +63,7 @@ body {
   position: relative;
 }
 
-.results .input-box-loup {
-  width: 40px;
-  height: 38px;
-  background-image: url("../../assets/img/lupa.png");
-  position: absolute;
-  left: 10px;
-  top: 7px;
-  z-index: 1;
-}
 
-.results .input-box-mic {
-  width: 37px;
-  height: 43px;
-  background-image: url("../../assets/img/mikro.png");
-  position: absolute;
-  right: 7px;
-  z-index: 1;
-  top: 4px;
-}
 
 .search-results-header-nav ul {
   margin: 10px 0 15px 0;
