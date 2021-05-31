@@ -1,5 +1,5 @@
 Vue.component('v-autocompleter', {
-    template: `
+  template: `
         <div
             class="input-box"
             :class="{ focused: shouldShowCitiesList }"
@@ -33,86 +33,103 @@ Vue.component('v-autocompleter', {
                     <p v-html="boldName(city.name)"></p>
                 </li>
             </ul>
-        </div>`,   
-    
-    
+        </div>`,
 
-    data: function() {  
-
-        return {
-            googleSearch: '',
-            cities: window.cities,
-            showResults: false,
-            isFocused: false,
-            activeResult: 0,
-            isInAutocompleter: false,
-            filteredCities: [],
-        }
+  props: {
+    options: {
+      type: Array,
+      required: true,
     },
-    watch: {
-        googleSearch: function(){
-            if (this.isInAutocompleter) return;
-            if (this.googleSearch.length === 0) return;
-
-            let results = this.cities.filter(city => city.name.includes(this.googleSearch))
-
-            this.filteredCities = (results.length > 10) ? results.slice(0, 10) : results
-        }
+    value: {
+      type: String,
+      required: true,
     },
-    computed: {
-        shouldShowCitiesList: function() {
-            return this.isFocused && this.googleSearch.length !== 0
-        },
+  },
+
+  data() {
+    return {
+      googleSearch: this.value,
+      showResults: false,
+      isFocused: false,
+      activeResult: 0,
+      isInAutocompleter: false,
+      filteredCities: [],
+    }
+  },
+  watch: {
+    googleSearch() {
+      if (this.isInAutocompleter) return;
+      if (this.googleSearch.length === 0) return;
+
+      this.$emit('input', this.googleSearch)
+
+      let results = this.options.filter(city => city.name.includes(this.googleSearch))
+
+      this.filteredCities = (results.length > 10) ? results.slice(0, 10) : results
     },
-    methods: {
-        boldName(city) {
-            return city.replaceAll(this.googleSearch, `<b>${this.googleSearch}</b>`)
-        },
-        goTo(resultNumber) {
-            if(this.isInAutocompleter === false) {
-                resultNumber = 0;
-            } 
-
-            if (resultNumber < 0) {
-                resultNumber = this.filteredCities.length - 1;
-            } else if (resultNumber === this.filteredCities.length) {
-                resultNumber = 0;
-            }
-            console.log(this.filteredCities)
-            console.log(resultNumber)
-            this.activeResult = resultNumber;
-            this.isInAutocompleter = true;
-            this.googleSearch = this.filteredCities[resultNumber].name;
-        },
-        submit() {
-            this.toggleFocused(false)
-
-            if (this.showResults) return
-
-            this.toggleResults(true)
-            this.$refs.second.focus()
-        },
-        select(city) {
-            this.googleSearch = city.name
-            this.submit()
-        },
-        toggleResults(value = undefined) {
-            if (value === undefined) {
-                return this.showResults = !this.showResults
-            }
-            this.showResults = value
-        },
-        toggleFocused(value = undefined) {
-            if (value === undefined) {
-                return this.isFocused = !this.isFocused
-            }
-            this.isFocused = value
-        },
-        reset() {
-            this.googleSearch = ''
-            this.toggleResults(false)
-        }
+    value() {
+      this.googleSearch = this.value
+    }
+  },
+  computed: {
+    shouldShowCitiesList: function () {
+      return this.isFocused && this.googleSearch.length !== 0
     },
+  },
+  methods: {
+    boldName(city) {
+      return city.replaceAll(this.googleSearch, `<b>${this.googleSearch}</b>`)
+    },
+    goTo(resultNumber) {
+      if (this.isInAutocompleter === false) {
+        resultNumber = 0;
+      }
+
+      if (resultNumber < 0) {
+        resultNumber = this.filteredCities.length - 1;
+      } else if (resultNumber === this.filteredCities.length) {
+        resultNumber = 0;
+      }
+      console.log(this.filteredCities)
+      console.log(resultNumber)
+      this.activeResult = resultNumber;
+      this.isInAutocompleter = true;
+      this.googleSearch = this.filteredCities[resultNumber].name;
+    },
+    submit() {
+      this.toggleFocused(false)
+
+      this.$emit('enter')
+
+      if (this.showResults) return
+
+      this.toggleResults(true)
+
+      if (this.activeResult) {
+        this.goTo(this.activeResult)
+      }
+    },
+    select(city) {
+      this.googleSearch = city.name
+      this.submit()
+    },
+    toggleResults(value = undefined) {
+      if (value === undefined) {
+        return this.showResults = !this.showResults
+      }
+      this.showResults = value
+    },
+    toggleFocused(value = undefined) {
+      if (value === undefined) {
+        return this.isFocused = !this.isFocused
+      }
+      this.isFocused = value
+    },
+    reset() {
+      this.googleSearch = ''
+      this.toggleResults(false)
+    }
+  },
 });
 
 

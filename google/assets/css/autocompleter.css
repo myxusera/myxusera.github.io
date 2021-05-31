@@ -132,3 +132,14 @@ li .input-box-mic {
     padding: 12px 16px;
     cursor: pointer;
 }
+.results .s-input {
+    min-width: 600px;
+    position: relative;
+    border: 1px solid #DDDDDD;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    padding: 13px 25px 13px 45px;
+    border-radius: 25px;
+    transition: box-shadow 100ms;
+    outline: none;
+  }
