@@ -1,68 +1,120 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Resume</title>
-	<meta charset="UTF-8">
-	<link
-		rel="stylesheet"
-		href="assets/css/styles.css"
-	>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+p {
+  padding: 100px;
+  text-align: justify;
+}
+
+h4 {
+  padding-top: 100px;
+}
+
+label {
+  display: block;
+  padding: 25px;
+}
+
+button {
+  padding: 15px;
+}
+
+/* Footer */
+.header{
+  padding: 100px;
+  text-align: center;
+  background: #aaa;
+  height: 100vh;	
+}
+
+.content{
+  padding: 100px;
+  text-align: center;
+  background: #bbb;
+  height: 100vh;	
+}
+
+.content2{
+  padding: 100px;
+  text-align: center;
+  background: #ccc;
+  height: 100vh;	
+}
+
+/* Footer */
+.footer {
+  padding: 100px;
+  text-align: center;
+  background: #fff;
+  height: 100vh;
+}
+
+
+</style>
 </head>
 <body>
-	<main class="resume">
-		<section class="grid-area photo">
-			<img
-				src="assets/img/cv.jpg"
-				alt="Portrait"
-			>
-		</section>
-		<section class="grid-area name">
-			<h1>OLIVIA WILSON</h1>
-			<h2>IT Project Manager</h2>
-		</section>
-		<section class="grid-area side">
-			<span class="side-title">Adress</span>
-			<span class="side-text">Cracow, Poland</span>
-			<span class="side-title">Email</span>
-			<span class="side-text">email@gmail.com</span>
-			<span class="side-title">Linkedin</span>
-			<span class="side-text">linkedin.com/profile</span>
-			<span class="side-title">Github</span>
-			<span class="side-text">github.com/profile</span>
-		</section>
-		<section class="grid-area about">
-			<h4 class="section-text">About me</h4>
-			<p class="about-desc">
-				I am a second-year student looking for an internship to gain my first experience in the IT industry. I am
-				willing to develop my interests in the fields of data analysis and artificial intelligence. In my opinion
-				socializing, building relationships and getting into teams quickly are essential to become a good teammate.
-				Currently, in my spare time, I am expanding my knowledge in the fields of statistics, databases and programming.
-			</p>
-		</section>
-		<section class="grid-area experience">
-			<span class="section-text">Work experience</span>		
-			<span class="about-title">Project Manager</span>
-			<span class="about-desc">SpaceX | Oct 2017 - present</span>
-			<ul class="section-ul">
-				<li class="section-ul-li">Conduct day-to-day project coordination, planning, and implementation across multiple teams</li>
-				<li class="section-ul-li">Create functional and technical application documents</li>
-			</ul>
-			<br>
-			<span class="about-title">Project Manager</span>
-			<span class="about-desc">Tesla | Oct 2014 - Oct 2017</span>
-			<ul class="section-ul">
-				<li class="section-ul-li">Conduct day-to-day project coordination, planning, and implementation across multiple teams</li>
-				<li class="section-ul-li">Create functional and technical application documents</li>
-				<li class="section-ul-li">Translated requirements into polished, high-level designs</li>
-			</ul>
-		</section>
-		<section class="grid-area school">
-			<span class="section-text">Education</span>
-			<span class="about-title">AGH University of Science and Technology</span>
-			<p class="about-desc">
-				IT and Econometrics<br>
-				10/2019 – present<br>
-				Expected graduation: July 2022<br>
-			</p>
-		</section>
-	</main>
-</body></html>
+
+<div class="header">
+  <h2>Przykladowy tekst</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac erat egestas, 
+     lacinia est ut, dapibus mauris. Pellentesque habitant morbi tristique senectus et
+     netus et malesuada fames ac turpis egestas. Donec in auctor nisl. Nulla convallis,
+     nulla eget pellentesque posuere, tortor nibh scelerisque nisl, non blandit odio ipsum at 
+     lacus. Etiam at nulla magna. Vestibulum quis pellentesque nunc. Suspendisse potenti. Suspendisse 
+     pulvinar ullamcorper tortor, sit amet feugiat ante viverra sit amet. Cras non auctor ligula. Nam 
+     auctor purus purus, sed vehicula nibh lobortis et.
+
+     Nulla placerat a lacus ut varius. Donec aliquam nibh sem, nec faucibus dolor porta et. 
+     Proin nibh ante, dictum ut magna venenatis, posuere rutrum massa. Quisque id lacus quis nibh 
+     blandit ornare. Suspendisse elementum dignissim risus, eu consequat risus vehicula a. Donec eget 
+     quam ac turpis dapibus tincidunt. Suspendisse potenti. Aliquam convallis tellus metus, eget vehicula 
+     metus tincidunt sed. Fusce elit lorem, hendrerit at dui nec, rutrum pellentesque mi. Donec pellentesque 
+     ut sapien ut ullamcorper. Morbi vel leo tempor, mattis sem ut, commodo urna. Mauris viverra ex velit, 
+     sodales eleifend elit porta id.</p>
+  <button> Zobacz wiecej </button>
+</div>
+
+<div class="content">
+  <h2>Produkty</h2>
+  <h4>Produkt 1</h4>
+  <a href="https://www.google.pl/">Link 1</a>
+  <h4>Produkt 2</h4>
+  <a href="https://www.google.pl/">Link 2</a>
+</div>
+
+<div class="content2">
+  <h2>Filmik</h2>
+  <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+  </iframe> 
+</div>
+
+<div class="footer">
+  <h2>Formularz</h2>
+  <!-- Podstawowe pole tekstowe -->
+  <form action="*">
+  <label>Imie i Nazwisko</label> <input type="text" name="imie i nazwisko" />
+  <label>Tel</label> <input type="text" name="tel" />
+  <label>Tresc</label> <input type="text" name="tresc" />
+  </form>
+  <button> wiecej </button>
+</div>
+
+</body>
+</html>
