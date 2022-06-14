@@ -1,120 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
+
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    <meta charset="UTF-8">
+    <title>One Page Website</title>
+    
+    <style>
+*{
+    margin: 0;
+    padding: 0;
 }
 
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+html{
+    scroll-behavior: smooth;
 }
 
-p {
-  padding: 100px;
-  text-align: justify;
+body{
+    font-size: 100%;
+    font-family: sans-serif;
 }
 
-h4 {
-  padding-top: 100px;
+div, section, span, ul, li, a, header{
+    box-sizing: border-box;
 }
 
-label {
-  display: block;
-  padding: 25px;
+/*css reset*/
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+}
+
+ul{
+ background-color: black;
+}
+
+#menu li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+}
+
+#menu li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+section{
+    width: 100%;
+    float: left;
+    height: 100vh;
+    position: relative;
+}
+
+#wstep{
+     background-color: #006FCD;
+}
+
+#produkt{
+     background-color: #B52B65;
+}
+
+#video{
+     background-color: #006FCD;
+}
+
+#formularz{
+     background-color: #B52B65;
+}
+
+h1{
+    text-align: justify;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
 }
 
 button {
-  padding: 15px;
-}
-
-/* Footer */
-.header{
-  padding: 100px;
+ background-color: #fff;
+  border: none;
+  color: #006FCD;
+  padding: 8px 16px;
   text-align: center;
-  background: #aaa;
-  height: 100vh;	
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.content{
-  padding: 100px;
-  text-align: center;
-  background: #bbb;
-  height: 100vh;	
+a{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
 }
 
-.content2{
-  padding: 100px;
-  text-align: center;
-  background: #ccc;
-  height: 100vh;	
-}
+li {
+color: #fff;
+  font-weight: bold;
 
-/* Footer */
-.footer {
-  padding: 100px;
-  text-align: center;
-  background: #fff;
-  height: 100vh;
 }
 
 
-</style>
+    </style>
 </head>
+
 <body>
+        <header>
+            <a href="#"><img src="" alt=""></a>
+            <ul id="menu">
+                <li><a href="#wstep">Wstęp</a></li>
+                <li><a href="#produkt">Produkt</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#formularz">Formularz</a></li>
+            </ul>
+        </header>
 
-<div class="header">
-  <h2>Przykladowy tekst</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac erat egestas, 
-     lacinia est ut, dapibus mauris. Pellentesque habitant morbi tristique senectus et
-     netus et malesuada fames ac turpis egestas. Donec in auctor nisl. Nulla convallis,
-     nulla eget pellentesque posuere, tortor nibh scelerisque nisl, non blandit odio ipsum at 
-     lacus. Etiam at nulla magna. Vestibulum quis pellentesque nunc. Suspendisse potenti. Suspendisse 
-     pulvinar ullamcorper tortor, sit amet feugiat ante viverra sit amet. Cras non auctor ligula. Nam 
-     auctor purus purus, sed vehicula nibh lobortis et.
+    <section id="wstep">
+  	<h1>
+		<center>
+		SONY PLAYSTATION 5
+		<br>
+		<br>
+		<br>
+		Konsola gier wideo dziewiątej generacji stworzona przez Sony Interactive Entertainment, zapowiedziana w 2019 roku jako następca PlayStation 4.  
+		Wydana została w dwóch wariantach. Podstawowy zawiera napęd dysków Blu-ray i obsługuje gry pochodzące zarówno z dystrybucji pudełkowej, jak i z dystrybucji cyfrowej za pośrednictwem 
+		sklepu PlayStation Store. Drugi wariant, PlayStation 5 Digital Edition, odznacza się niższą ceną ze względu na brak napędu optycznego i umożliwia uruchamianie jedynie gier cyfrowych. 
+		Konsola wyposażona jest w napęd SSD pozwalający na szybkie przesyłanie danych i znaczące poprawienie wydajności wyświetlania grafiki, w procesor graficzny AMD obsługujący technologię
+		śledzenia promieni i rozdzielczość 4K oraz pozwalający uruchamiać gry z szybkością do 120 klatek na sekundę. Zapewniono też obsługę dźwięku 3D. PlayStation 5 jest wstecznie
+		kompatybilna z większością gier PlayStation 4 i PlayStation VR.
+		<br>
+		<br>
+		<br>
+		<a href="https://www.playstation.com/pl-pl/ps5/?smcid=pdc%3Apl-pl%3Aprimary%20nav%3Amsg-hardware%3Aps5">
+		<button> Zobacz więcej </button>
+		</a>
+		</center>
+	</h1>
+    </section>
 
-     Nulla placerat a lacus ut varius. Donec aliquam nibh sem, nec faucibus dolor porta et. 
-     Proin nibh ante, dictum ut magna venenatis, posuere rutrum massa. Quisque id lacus quis nibh 
-     blandit ornare. Suspendisse elementum dignissim risus, eu consequat risus vehicula a. Donec eget 
-     quam ac turpis dapibus tincidunt. Suspendisse potenti. Aliquam convallis tellus metus, eget vehicula 
-     metus tincidunt sed. Fusce elit lorem, hendrerit at dui nec, rutrum pellentesque mi. Donec pellentesque 
-     ut sapien ut ullamcorper. Morbi vel leo tempor, mattis sem ut, commodo urna. Mauris viverra ex velit, 
-     sodales eleifend elit porta id.</p>
-  <button> Zobacz wiecej </button>
-</div>
+    <section id="produkt">
+	<h1>
+	<center>
+	WERSJE KONSOLI
+	<br>
+	<br>
+	<br>
+	Sony Playstation 5 - wersja z napędem optycznym
+	<br>
+	<br>
+	<br>
+	<a href="https://www.benchmark.pl/produkt/sony-playstation-5">Szczegóły</a>
+	<br>
+	<br>
+	<br>
+	Sony Playstation 5 - wersja bez napędu optycznego
+	<br>
+	<br>
+	<br>
+  	<a href="https://www.benchmark.pl/produkt/sony-playstation-5-digital">Szczegóły</a>
+	<br>
+	<br>
+	<br>
+	</center>
+	</h1>
+    </section>
+    
+    <section id="video">
+	<h1>
+	<center>
+	VIDEO PROMOCYJNE
+	<br>
+	<br>
+	<br>
+  	<iframe width="800" height="600"
+    	src="https://www.youtube.com/embed/cxXvYJyBlc4">
+  	</iframe> 
+	</center>
+	</h1>
+    </section>
 
-<div class="content">
-  <h2>Produkty</h2>
-  <h4>Produkt 1</h4>
-  <a href="https://www.google.pl/">Link 1</a>
-  <h4>Produkt 2</h4>
-  <a href="https://www.google.pl/">Link 2</a>
-</div>
-
-<div class="content2">
-  <h2>Filmik</h2>
-  <iframe width="420" height="315"
-    src="https://www.youtube.com/embed/tgbNymZ7vqY">
-  </iframe> 
-</div>
-
-<div class="footer">
-  <h2>Formularz</h2>
-  <!-- Podstawowe pole tekstowe -->
-  <form action="*">
-  <label>Imie i Nazwisko</label> <input type="text" name="imie i nazwisko" />
-  <label>Tel</label> <input type="text" name="tel" />
-  <label>Tresc</label> <input type="text" name="tresc" />
-  </form>
-  <button> wiecej </button>
-</div>
+    <section id="formularz">
+	<h1>
+	<center>
+	FORMULARZ KONTAKTOWY
+	<br>
+	<br>
+	<br>
+  	<form action="*">
+  	<label>Imie i nazwisko:</label> <input type="text" name="imie i nazwisko" />
+	<br>
+	<br>
+	<br>
+  	<label>Numer telefonu:</label> <input type="text" name="tel" />
+	<br>
+	<br>
+	<br>
+  	<label>Treść zapytania:</label> <input type="text" name="tresc" />
+	<br>
+	<br>
+	<br>
+  	</form>
+  	<button> Więcej </button>
+	</center>
+	</h1>
+    </section>
 
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
